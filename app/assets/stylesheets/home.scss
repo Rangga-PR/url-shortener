@@ -1,0 +1,39 @@
+:root {
+    background: hsl(348, 86%, 61%);
+  }
+
+.title {
+    color: white !important;
+    margin-bottom: 50px !important;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+    padding: 10%;
+}
+
+.url-list{
+    padding: 20px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    max-height: 50vh;
+    overflow: auto;
+
+    &::-webkit-scrollbar{
+        visibility: hidden;
+    }
+}
+
+.is-read {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+
+    &:focus {
+        border: 1px dashed hsl(348, 86%, 61%) !important;
+        color: hsl(348, 86%, 61%) !important;
+    }
+}
