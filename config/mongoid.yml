@@ -1,0 +1,6 @@
+development:
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_URL'] %>
+      options:
+        server_selection_timeout: 5
