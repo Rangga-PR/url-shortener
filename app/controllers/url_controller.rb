@@ -9,7 +9,8 @@ class UrlController < ApplicationController
         if urlIsValid
             shortUrl = generateShortUrl()
             @newData = Url.create({:short_url => shortUrl, :original_url => params[:url]})
-            render json: @newData.as_json
+            session[:shortenUrl].push(@newData.as_json)
+            redirect_to home_path
         else
             render :json => @@error, :status => 400
         end

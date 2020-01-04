@@ -26,14 +26,20 @@
     &::-webkit-scrollbar{
         visibility: hidden;
     }
+
+    .short {
+        background-color: hsl(348, 86%, 61%);
+        color: white;
+
+        &:focus {
+            color: white;
+        }
+    }
 }
 
 .is-read {
-    border-top-right-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
-
     &:focus {
-        border: 1px dashed hsl(348, 86%, 61%) !important;
-        color: hsl(348, 86%, 61%) !important;
+        border: 1px dashed hsl(348, 86%, 61%);
+        color: hsl(348, 86%, 61%);
     }
 }

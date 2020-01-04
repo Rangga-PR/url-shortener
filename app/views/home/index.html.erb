@@ -1,20 +1,24 @@
 <body class="main">
     <div class="container has-text-centered">
-        <p class="title">URLShortener</p>
-        <div class="field is-grouped">
-            <p class="control is-expanded">
-                <input class="input is-rounded" type="text" placeholder="Input your URL">
-            </p>
-            <button class="button is-danger is-rounded is-inverted">Shorten</button>
-        </div>
+        <p class="title">URL Shortener</p>
+        <form action='/shorten-url' method='post'>
+            <div class="field is-grouped">
+                <p class="control is-expanded">
+                    <input class="input is-rounded" name="url" value="<%= @url %>" type="text" placeholder="Input your URL">
+                </p>
+                <button type="submit" class="button is-danger is-rounded is-inverted">Shorten</button>
+            </div>
+        </form>
         
         <div class='url-list'>
-            <div class="field has-addons">
-                <input class="input is-read" type="text" value="https://guides.rubyonrails.org/layouts_and_rendering.html" readonly>
-                <p class="control">
-                    <a class="button is-danger is-rounded">/Short_URL</a>
-                </p>
-            </div>
+            <% @shortenUrl.map do |shortUrl| %>
+                <div class="field has-addons">
+                    <input class="input is-read" type="text" value="<%= shortUrl['original_url'] %>" readonly>
+                    <p class="control">
+                        <input class="input short" type="text" value="<%= ENV['APP_HOST']+"/"+shortUrl['short_url'] %>" readonly>
+                    </p>
+                </div>
+            <% end %>
         <div/>
 
     </div>
